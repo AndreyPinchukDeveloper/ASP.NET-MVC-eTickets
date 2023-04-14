@@ -30,5 +30,7 @@ app.UseAuthorization();//dfd
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+AddDbInitializer.Seed(app);//if it dowsn't work put it before app.Run
 app.Run();
+
+
