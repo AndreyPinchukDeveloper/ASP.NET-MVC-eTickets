@@ -7,7 +7,7 @@ namespace eTickets.Models
         [Key]
         public int Id { get; set; }
 
-        [Display(Name = "Profile Picture URL")]//need to show this data into Index.cshtml
+        [Display(Name = "Profile Picture")]//need to show this data into Index.cshtml
         public string ProfilePictureURL { get; set; }
 
         [Display(Name = "Full Name")]//need to show this data into Index.cshtml
