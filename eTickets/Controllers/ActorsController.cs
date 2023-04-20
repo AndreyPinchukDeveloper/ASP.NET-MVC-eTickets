@@ -19,7 +19,7 @@ namespace eTickets.Controllers
             return View(data);
         }
 
-        //get: actors/create
+        //TODO - actors/create
         public IActionResult Create()
         {
             return View();
@@ -34,6 +34,15 @@ namespace eTickets.Controllers
             }
             _service.Add(actor);
             return RedirectToAction(nameof(Index));
+        }
+
+        //TODO - actors/Details
+        public async Task<IActionResult> Details(int id)
+        {
+            var actorDetails = _service.GetByID(id);
+
+            if (actorDetails == null) return View("Empty");
+            return View(actorDetails);
         }
     }
 }
