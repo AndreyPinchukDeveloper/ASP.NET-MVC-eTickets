@@ -15,7 +15,7 @@ namespace eTickets.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var data = await _service.GetAllActors();
+            var data = await _service.GetAllActorsAsync();
             return View(data);
         }
 
@@ -32,14 +32,14 @@ namespace eTickets.Controllers
             {
                 return View(actor);
             }
-            _service.Add(actor);
+            await _service.AddAsync(actor);
             return RedirectToAction(nameof(Index));
         }
 
         //TODO - actors/Details
         public async Task<IActionResult> Details(int id)
         {
-            var actorDetails = _service.GetByID(id);
+            var actorDetails = await _service.GetByIDAsync(id);
 
             if (actorDetails == null) return View("Empty");
             return View(actorDetails);
