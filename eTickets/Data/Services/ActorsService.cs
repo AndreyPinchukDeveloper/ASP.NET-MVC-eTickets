@@ -22,7 +22,7 @@ namespace eTickets.Data.Services
             throw new NotImplementedException();
         }
 
-        public async Task<IEnumerable<Actor>> GetAllActors()
+        public async Task<IEnumerable<Actor>> GetAllActorsAsync()
         {
             var result = await _appDbContext.Actors.ToListAsync();
             return result;
@@ -34,9 +34,11 @@ namespace eTickets.Data.Services
             return result;
         }
 
-        public Actor Update(int id, Actor newActor)
+        public async Task<Actor> UpdateAsync(int id, Actor newActor)
         {
-            throw new NotImplementedException();
+            _appDbContext.Update(newActor);
+            await _appDbContext.SaveChangesAsync();
+            return newActor;
         }
     }
 }

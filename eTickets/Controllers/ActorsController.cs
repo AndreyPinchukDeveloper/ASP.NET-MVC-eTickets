@@ -36,13 +36,33 @@ namespace eTickets.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //TODO - actors/Details
+        //TODO - actors/details
         public async Task<IActionResult> Details(int id)
         {
             var actorDetails = await _service.GetByIDAsync(id);
 
-            if (actorDetails == null) return View("Empty");
+            if (actorDetails == null) return View("Not found");
             return View(actorDetails);
+        }
+
+        //TODO - actors/edit
+        public async Task<IActionResult>  Edit(int id)
+        {
+            var actorDetails = await _service.GetByIDAsync(id);
+
+            if (actorDetails == null) return View("Not found");
+            return View(actorDetails);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("Id, FullName, ProfilePictureURL, Bio")] Actor actor)
+        {
+            if (ModelState.IsValid)//if don't valid
+            {
+                return View(actor);
+            }
+            await _service.UpdateAsync(id, actor);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
