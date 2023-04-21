@@ -41,7 +41,7 @@ namespace eTickets.Controllers
         {
             var actorDetails = await _service.GetByIDAsync(id);
 
-            if (actorDetails == null) return View("Not found");
+            if (actorDetails == null) return View("NotFound");
             return View(actorDetails);
         }
 
@@ -50,7 +50,7 @@ namespace eTickets.Controllers
         {
             var actorDetails = await _service.GetByIDAsync(id);
 
-            if (actorDetails == null) return View("Not found");
+            if (actorDetails == null) return View("NotFound");
             return View(actorDetails);
         }
 
@@ -70,7 +70,7 @@ namespace eTickets.Controllers
         {
             var actorDetails = await _service.GetByIDAsync(id);
 
-            if (actorDetails == null) return View("Not found");
+            if (actorDetails == null) return View("NotFound");
             return View(actorDetails);
         }
 
@@ -78,7 +78,7 @@ namespace eTickets.Controllers
         public async Task<IActionResult> RemoveConfirmed(int id)
         {
             var actorDetails = await _service.GetByIDAsync(id);
-            if (actorDetails == null) return View("Not found");
+            if (actorDetails == null) return View("NotFound");
 
             await _service.RemoveAsync(id);
             return RedirectToAction(nameof(Index));

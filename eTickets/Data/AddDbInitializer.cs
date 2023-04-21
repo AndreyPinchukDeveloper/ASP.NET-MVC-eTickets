@@ -196,89 +196,13 @@ namespace eTickets.Data
                 //Actors & Movies
                 if (!context.Actors_Movies.Any())
                 {
-                    Random random = new Random();
                     context.Actors_Movies.AddRange(new List<Actor_Movie>()
                     {
                         
                         new Actor_Movie()
                         {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
-                        },
-                        new Actor_Movie()
-                        {
-                            ActorId = random.Next(1,5),
-                            MovieId = random.Next(1,5),
+                            ActorId = 3,
+                            MovieId = 3,
                         },
                     });
                     context.SaveChanges();
