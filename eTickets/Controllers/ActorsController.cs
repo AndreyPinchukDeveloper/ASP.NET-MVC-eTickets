@@ -64,5 +64,24 @@ namespace eTickets.Controllers
             await _service.UpdateAsync(id, actor);
             return RedirectToAction(nameof(Index));
         }
+
+        //TODO - actors/remove
+        public async Task<IActionResult> Remove(int id)
+        {
+            var actorDetails = await _service.GetByIDAsync(id);
+
+            if (actorDetails == null) return View("Not found");
+            return View(actorDetails);
+        }
+
+        [HttpPost, ActionName("Remove")]
+        public async Task<IActionResult> RemoveConfirmed(int id)
+        {
+            var actorDetails = await _service.GetByIDAsync(id);
+            if (actorDetails == null) return View("Not found");
+
+            await _service.RemoveAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
