@@ -1,0 +1,25 @@
+﻿table{
+    border: 0;
+    width: 100%;
+    max-width: 900px;
+}
+
+table thead{
+    background-color: navajowhite;
+    color: dodgerblue;
+}
+
+table th{
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+table tr:hover {
+    background-color: whitesmoke;
+}
+
+table td {
+    border-bottom: 1px dashed #000;
+    padding: 10px;
+    font-size: 1.1em;
+}
