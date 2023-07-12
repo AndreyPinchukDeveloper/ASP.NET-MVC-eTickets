@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/eTickets.styles.css" asp-append-version="true" />
 
-    <link href="@Url.Content()" rel="stylesheet" type="text/css"/>
+    <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 </head>
 <body>
@@ -48,6 +48,23 @@
                         </button>
                     </form>
 
+                </div>
+                <h2>Import xml file</h2>
+                <div>
+                    @using(Html.BeginForm("Import", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm-excel"}))
+                    {
+                        <div>
+                            Download exel file:
+                            <input type="file" name="exelFile" id="excelFile" />
+                            <div>
+                                <input type="submit" value="Download" />
+                            </div>
+                        </div>
+                    }
+                </div>
+                <h2>Export file</h2>
+                <div>
+                    <a ref="@Url.RouteUrl("Default", new {controller = "Home", action = "Export"})">Download file</a>
                 </div>
             </div>
         </nav>
